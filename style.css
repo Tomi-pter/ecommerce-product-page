@@ -1,0 +1,216 @@
+@font-face {
+    font-family: 'KSB';
+    src: url('fonts/KumbhSansBold.eot');
+    src: url('fonts/KumbhSansBold.eot') format('embedded-opentype'), url('fonts/KumbhSansBold.woff2') format('woff2'), url('fonts/KumbhSansBold.woff') format('woff'), url('fonts/KumbhSansBold.ttf') format('truetype'), url('fonts/KumbhSansBold.svg#KumbhSansBold') format('svg');
+}
+
+@font-face {
+    font-family: 'KSR';
+    src: url('fonts/KumbhSansRegular.eot');
+    src: url('fonts/KumbhSansRegular.eot') format('embedded-opentype'), url('fonts/KumbhSansRegular.woff2') format('woff2'), url('fonts/KumbhSansRegular.woff') format('woff'), url('fonts/KumbhSansRegular.ttf') format('truetype'), url('fonts/KumbhSansRegular.svg#KumbhSansRegular') format('svg');
+}
+
+:root {
+    --orange: hsl(26, 100%, 55%);
+    --pale-orange: hsl(25, 100%, 94%);
+    --very-dark-blue: hsl(220, 13%, 13%);
+    --dark-grayish-blue: hsl(219, 9%, 45%);
+    --grayish-blue: hsl(220, 14%, 75%);
+    --light-grayish-blue: hsl(223, 64%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --black-opaque: hsl(0, 0%, 0%, .75);
+    --font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--white);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+header img {
+    max-width: 100%;
+    max-height: 1.5rem;
+    margin: 0 .35rem;
+}
+
+nav {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    left: -1rem;
+    position: absolute;
+    transition: all 500ms ease-in;
+}
+
+main>*:not(.slideshow) {
+    padding: 0 1.5rem 3rem;
+}
+
+.slideshow img {
+    max-width: 100%;
+}
+
+.change-img {
+    background-color: var(--white);
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: 35%;
+}
+
+.change-img img {
+    width: 10px;
+    height: 10px;
+    margin: 0 .25rem 0 .25rem;
+}
+
+.prev {
+    left: 1rem;
+}
+
+.next {
+    right: 1rem;
+}
+
+article :is(h2,
+.price>p:first-child) {
+    font-family: 'KSB';
+    font-size: 2em;
+}
+
+article * {
+    font-family: 'KSR';
+    font-size: var(--font-size);
+}
+
+article h1 {
+    font-family: 'KSB';
+    text-transform: uppercase;
+    font-size: var(--font-size);
+    color: var(--orange);
+}
+
+article>p,
+nav a {
+    color: var(--dark-grayish-blue);
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price span {
+    background-color: var(--pale-orange);
+    color: var(--orange);
+    border-radius: .5rem;
+    padding: .25rem .5rem;
+    margin: 0 .5rem;
+    font-family: 'KSB';
+    font-size: 1.1rem;
+    vertical-align: middle;
+}
+
+.price p:last-child {
+    color: var(--grayish-blue);
+    text-decoration: line-through;
+    font-size: 1.1rem;
+}
+
+.item-amount {
+    background-color: var(--light-grayish-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: .5rem;
+    padding: 0 1rem;
+}
+
+.item-amount button {
+    border: none;
+    background-color: var(--light-grayish-blue);
+    padding: 0;
+}
+
+button.add-cart {
+    width: 100%;
+    margin: 1rem 0 2rem;
+    background-color: var(--orange);
+    border: none;
+    border-radius: .5rem;
+    padding: 1rem 0;
+    color: var(--white);
+    box-shadow: 0 25px 25px var(--pale-orange);
+}
+
+button.add-cart img {
+    filter: saturate(1) brightness(2.2);
+    margin-right: 1rem;
+    max-height: 1rem;
+}
+
+
+/*Responsive nav*/
+
+nav.clicked {
+    background-color: var(--white);
+    position: fixed;
+    visibility: visible;
+    padding: 2rem 1rem;
+    height: 100%;
+    width: 60vw;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    overflow-x: hidden;
+}
+
+nav img {
+    margin-bottom: 2rem;
+}
+
+nav.clicked a {
+    display: block;
+    text-decoration: none;
+    font-family: 'KSB';
+    color: var(--black);
+    padding: 1rem .5rem;
+    position: relative;
+}
+
+.dim {
+    background-color: var(--black-opaque);
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    transition: all 500ms;
+}
+
+.dim.clicked {
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+}

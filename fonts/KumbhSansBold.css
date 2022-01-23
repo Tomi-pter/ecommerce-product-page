@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'KumbhSansBold';
+    src: url('fonts/KumbhSansBold.eot');
+    src: url('fonts/KumbhSansBold.eot') format('embedded-opentype'),
+         url('fonts/KumbhSansBold.woff2') format('woff2'),
+         url('fonts/KumbhSansBold.woff') format('woff'),
+         url('fonts/KumbhSansBold.ttf') format('truetype'),
+         url('fonts/KumbhSansBold.svg#KumbhSansBold') format('svg');
+}
