@@ -108,17 +108,30 @@ nav {
     padding-right: 1rem;
 }
 
+.cartMain .emptyP {
+    display: none;
+}
+
+.cartMain.empty .emptyP {
+    display: block;
+    padding: 5rem;
+    text-align: center;
+    margin: auto;
+}
+
+.cartMain.empty>button {
+    display: none;
+}
+
+.cartMain.empty>div {
+    display: none;
+}
+
 .cartMain>div {
     display: flex;
     align-items: center;
     margin-left: 1rem;
     margin-right: 1rem;
-}
-
-.cartMain.empty>div {
-    display: none;
-    content: 'Your cart is empty';
-    padding: 3rem;
 }
 
 .cartMain>div img:first-child {
@@ -327,6 +340,10 @@ nav.clicked a {
     visibility: visible;
     width: 100%;
     height: 100%;
+}
+
+section {
+    display: none;
 }
 
 @media screen and (min-width: 799px) {

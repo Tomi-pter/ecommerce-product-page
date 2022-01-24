@@ -17,6 +17,7 @@ const cartMain = document.querySelector(".cartMain");
 const cartDiv = document.querySelector(".cartMain>div");
 const checkoutBtn = document.querySelector(".cartMain>button");
 const cart = document.querySelector(".headCart");
+const delBtn = document.querySelector(".clearCart");
 
 menu.addEventListener("click", () => {
     nav.classList.add("clicked");
@@ -88,11 +89,18 @@ addCart.addEventListener("click", () => {
             (totalAmt.innerHTML = `${cAmount} <span class='total'>$${(
       cAmount * 125
     ).toFixed(2)}</span>`),
-            (itemAmnt.textContent = 0));
+            (itemAmnt.textContent = 0)),
+        cartMain.classList.remove("empty");
 });
 
 cart.addEventListener("click", () => {
     cartMain.classList.contains("clicked") ?
         cartMain.classList.remove("clicked") :
         cartMain.classList.add("clicked");
+});
+
+delBtn.addEventListener("click", () => {
+    cartMain.classList.add("empty");
+    cartAmnt.textContent = "0";
+    cartAmnt.style.display = "none";
 });
