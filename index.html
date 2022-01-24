@@ -14,22 +14,42 @@
 
 <body>
     <header>
-        <div class="logo-menu">
-            <img src="images/icon-menu.svg" alt="menu" class="menu">
-            <div class="dim"></div>
-            <img src="images/logo.svg" alt="logo">
+        <div class="headNav">
+            <div class="logo-menu">
+                <img src="images/icon-menu.svg" alt="menu" class="menu">
+                <div class="dim"></div>
+                <img src="images/logo.svg" alt="logo">
+            </div>
+            <nav>
+                <img src="images/icon-close.svg" alt="close" class="close">
+                <a href="#">Collections</a>
+                <a href="#">Men</a>
+                <a href="#">Women</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
         </div>
-        <nav>
-            <img src="images/icon-close.svg" alt="close" class="close">
-            <a href="#">Collections</a>
-            <a href="#">Men</a>
-            <a href="#">Women</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
         <div class="user-cart">
-            <img src="images/icon-cart.svg" alt="cart">
+            <div class="headCart">
+                <img src="images/icon-cart.svg" alt="cart">
+                <div class="addedItems">0</div>
+            </div>
             <img src="images/image-avatar.png" alt="avatar">
+        </div>
+        <div class="cartMain">
+            <h3>Cart</h3>
+            <div>
+                <img src="images/image-product-1-thumbnail.jpg" alt="thumbnail">
+                <div>
+                    <p>Fall Limited Edition Sneakers</p>
+                    <p>$125.00 x <span class="totAmt"><span class="total"></span></span>
+                    </p>
+                </div>
+                <button>
+                  <img src="images/icon-delete.svg" alt="delete">
+                </button>
+            </div>
+            <button type="reset">Checkout</button>
         </div>
     </header>
     <main>
@@ -37,6 +57,12 @@
             <button class="change-img prev"><img src="images/icon-previous.svg" alt="previous"></button>
             <img src="images/image-product-1.jpg" alt="product-1" class="product" id="1">
             <button class="change-img next"><img src="images/icon-next.svg" alt="next"></button>
+            <div class="thumbnail">
+                <img src="images/image-product-1-thumbnail.jpg" alt="image-1">
+                <img src="images/image-product-2-thumbnail.jpg" alt="image-2">
+                <img src="images/image-product-3-thumbnail.jpg" alt="image-3">
+                <img src="images/image-product-4-thumbnail.jpg" alt="image-4">
+            </div>
         </div>
         <article>
             <h1>Sneaker Company</h1>
@@ -46,12 +72,14 @@
                 <p>$125.00 <span>50%</span></p>
                 <p>$250.00</p>
             </div>
-            <div class="item-amount">
-                <button><img src="images/icon-minus.svg" alt="reduce"></button>
-                <p>0</p>
-                <button><img src="images/icon-plus.svg" alt="add"></button>
+            <div class="cart">
+                <div class="item-amount">
+                    <button class="reduceI"><img src="images/icon-minus.svg" alt="reduce"></button>
+                    <p>0</p>
+                    <button class="increaseI"><img src="images/icon-plus.svg" alt="add"></button>
+                </div>
+                <button class="add-cart"><img src="images/icon-cart.svg" alt="add-to-cart">Add to cart</button>
             </div>
-            <button class="add-cart"><img src="images/icon-cart.svg" alt="add-to-cart">Add to cart</button>
         </article>
     </main>
 
