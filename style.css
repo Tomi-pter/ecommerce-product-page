@@ -465,6 +465,15 @@ article button:focus {
     background-color: var(--white);
 }
 
+.headCart:hover img,
+.headCart:focus img {
+    filter: invert(0.4) sepia(1) saturate(20) hue-rotate(0deg) brightness(1);
+}
+
+.headCart:focus {
+    outline: none;
+}
+
 
 /*Desktop styles*/
 
@@ -537,7 +546,7 @@ article button:focus {
         margin-top: 1.5rem;
     }
     .thumbnail * {
-        max-width: 7.5rem;
+        max-width: 22%;
         border-radius: .5rem;
         cursor: pointer;
     }
@@ -575,5 +584,11 @@ article button:focus {
     .cartMain {
         width: 30%;
         right: 0;
+    }
+}
+
+@media screen and (min-width:600px) and (max-width: 1023px) {
+    .change-img {
+        top: 25rem;
     }
 }

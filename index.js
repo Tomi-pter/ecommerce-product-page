@@ -70,6 +70,10 @@ thumbArr.forEach((item, index) => {
     item.addEventListener("click", () => {
         displayImg.src = `images/image-product-${index + 1}.jpg`;
     });
+    item.addEventListener("keyup", (e) => {
+        e.key === "Enter" &&
+            (displayImg.src = `images/image-product-${index + 1}.jpg`);
+    });
 });
 
 reduceItem.addEventListener("click", () => {
@@ -101,6 +105,12 @@ cart.addEventListener("click", () => {
     cartMain.classList.contains("clicked") ?
         cartMain.classList.remove("clicked") :
         cartMain.classList.add("clicked");
+});
+cart.addEventListener("keyup", (e) => {
+    e.key === "Enter" &&
+        (cartMain.classList.contains("clicked") ?
+            cartMain.classList.remove("clicked") :
+            cartMain.classList.add("clicked"));
 });
 
 delBtn.addEventListener("click", () => {
