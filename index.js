@@ -12,12 +12,16 @@ const itemAmnt = document.querySelector(".item-amount p");
 const addCart = document.querySelector(".add-cart");
 const cartAmnt = document.querySelector(".headCart div");
 const totalAmt = document.querySelector(".totAmt");
-const total = document.querySelector(".total");
 const cartMain = document.querySelector(".cartMain");
-const cartDiv = document.querySelector(".cartMain>div");
 const checkoutBtn = document.querySelector(".cartMain>button");
 const cart = document.querySelector(".headCart");
 const delBtn = document.querySelector(".clearCart");
+const lightBox = document.querySelector("section");
+const sectDisplayImg = document.querySelector(".secDisplay");
+const sectCloseBtn = document.querySelector(".secClose");
+const sectPrevBtn = document.querySelector(".secPrev");
+const sectNextBtn = document.querySelector(".secNext");
+const sectThumbnail = document.querySelectorAll(".secTn img");
 
 menu.addEventListener("click", () => {
     nav.classList.add("clicked");
@@ -103,4 +107,64 @@ delBtn.addEventListener("click", () => {
     cartMain.classList.add("empty");
     cartAmnt.textContent = "0";
     cartAmnt.style.display = "none";
+});
+
+displayImg.addEventListener("click", () => {
+    let w;
+    if (window.innerWidth !== undefined && window.innerHeight !== undefined) {
+        w = window.innerWidth;
+    } else {
+        w = document.documentElement.clientWidth;
+    }
+
+    w > 1239 &&
+        ((lightBox.style.display = "block"), dimmer.classList.add("clicked"));
+});
+
+sectCloseBtn.addEventListener("click", () => {
+    lightBox.style.display = "none";
+    dimmer.classList.remove("clicked");
+});
+sectCloseBtn.addEventListener("keyup", (e) => {
+    e.key === "Enter" &&
+        ((lightBox.style.display = "none"), dimmer.classList.remove("clicked"));
+});
+
+sectPrevBtn.addEventListener("click", () => {
+    let num = +sectDisplayImg.id;
+
+    if (num > 1) {
+        num -= 1;
+        sectDisplayImg.src = `images/image-product-${num}.jpg`;
+        sectDisplayImg.id = num;
+    } else if (num === 1) {
+        num = 4;
+        sectDisplayImg.src = `images/image-product-${num}.jpg`;
+        sectDisplayImg.id = num;
+    }
+});
+sectNextBtn.addEventListener("click", () => {
+    let num = +sectDisplayImg.id;
+
+    if (num < 4) {
+        num += 1;
+        sectDisplayImg.src = `images/image-product-${num}.jpg`;
+        sectDisplayImg.id = num;
+    } else if (num === 4) {
+        num = 1;
+        sectDisplayImg.src = `images/image-product-${num}.jpg`;
+        sectDisplayImg.id = num;
+    }
+});
+
+const sectThumbArr = Array.from(sectThumbnail);
+
+sectThumbArr.forEach((item, index) => {
+    item.addEventListener("click", () => {
+        sectDisplayImg.src = `images/image-product-${index + 1}.jpg`;
+    });
+});
+
+checkoutBtn.addEventListener("click", () => {
+    window.location.reload();
 });
