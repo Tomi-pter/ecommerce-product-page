@@ -58,7 +58,7 @@ nav {
     overflow: hidden;
     left: -1rem;
     position: absolute;
-    transition: all 500ms ease-in;
+    transition: all 500ms cubic-bezier(0.01, 0.77, 0.26, 1);
 }
 
 .user-cart {
