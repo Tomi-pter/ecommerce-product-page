@@ -127,7 +127,7 @@ displayImg.addEventListener("click", () => {
         w = document.documentElement.clientWidth;
     }
 
-    w > 1239 &&
+    w > 1023 &&
         ((lightBox.style.display = "block"), dimmer.classList.add("clicked"));
 });
 
@@ -143,26 +143,27 @@ sectCloseBtn.addEventListener("keyup", (e) => {
 sectPrevBtn.addEventListener("click", () => {
     let num = +sectDisplayImg.id;
 
-    if (num > 1) {
+    if (num > 2) {
         num -= 1;
-        sectDisplayImg.src = `images/image-product-${num}.jpg`;
+        sectDisplayImg.src = `images/image-product-${num - 1}.jpg`;
         sectDisplayImg.id = num;
-    } else if (num === 1) {
-        num = 4;
-        sectDisplayImg.src = `images/image-product-${num}.jpg`;
+    } else if (num === 2) {
+        num = 5;
+        sectDisplayImg.src = `images/image-product-${num - 1}.jpg`;
         sectDisplayImg.id = num;
     }
 });
 sectNextBtn.addEventListener("click", () => {
     let num = +sectDisplayImg.id;
 
-    if (num < 4) {
+    console.log(num);
+    if (num < 5) {
         num += 1;
-        sectDisplayImg.src = `images/image-product-${num}.jpg`;
+        sectDisplayImg.src = `images/image-product-${num - 1}.jpg`;
         sectDisplayImg.id = num;
-    } else if (num === 4) {
-        num = 1;
-        sectDisplayImg.src = `images/image-product-${num}.jpg`;
+    } else if (num === 5) {
+        num = 2;
+        sectDisplayImg.src = `images/image-product-${num - 1}.jpg`;
         sectDisplayImg.id = num;
     }
 });
