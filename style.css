@@ -409,72 +409,6 @@ section button img {
 }
 
 
-/*Hover states*/
-
-nav a:hover,
-nav a:focus {
-    text-decoration: underline;
-    text-decoration-color: var(--orange);
-    text-underline-offset: 2rem;
-    text-decoration-thickness: .25rem;
-    z-index: 60;
-    color: var(--black);
-    outline: none;
-}
-
-.user-cart>img:hover,
-.user-cart>img:focus {
-    outline: none;
-    border: 2px solid var(--orange);
-    border-radius: 50%;
-}
-
-.thumbnail img:hover,
-.thumbnail img:focus {
-    outline: none;
-    opacity: .5;
-}
-
-article button:hover,
-article button:focus {
-    outline: none;
-    opacity: .5;
-}
-
-.secClose:hover,
-.secClose:focus {
-    outline: none;
-    filter: invert(0.4) sepia(1) saturate(20) hue-rotate(0deg) brightness(1);
-}
-
-.change-sec:hover img,
-.change-sec:focus img {
-    outline: none;
-    filter: invert(0.4) sepia(1) saturate(20) hue-rotate(0deg) brightness(1);
-}
-
-.change-sec:hover,
-.change-sec:focus {
-    outline: none;
-}
-
-.secTn img:hover,
-.secTn img:focus {
-    outline: none;
-    opacity: .75;
-    background-color: var(--white);
-}
-
-.headCart:hover img,
-.headCart:focus img {
-    filter: invert(0.4) sepia(1) saturate(20) hue-rotate(0deg) brightness(1);
-}
-
-.headCart:focus {
-    outline: none;
-}
-
-
 /*Desktop styles*/
 
 @media screen and (min-width: 1024px) {
@@ -584,6 +518,60 @@ article button:focus {
     .cartMain {
         width: 30%;
         right: 0;
+    }
+    /*Hover states*/
+    nav a:hover,
+    nav a:focus {
+        text-decoration: underline;
+        text-decoration-color: var(--orange);
+        text-underline-offset: 2rem;
+        text-decoration-thickness: .25rem;
+        z-index: 60;
+        color: var(--black);
+        outline: none;
+    }
+    .user-cart>img:hover,
+    .user-cart>img:focus {
+        outline: none;
+        border: 2px solid var(--orange);
+        border-radius: 50%;
+    }
+    .thumbnail img:hover,
+    .thumbnail img:focus {
+        outline: none;
+        opacity: .5;
+    }
+    article button:hover,
+    article button:focus {
+        outline: none;
+        opacity: .5;
+    }
+    .secClose:hover,
+    .secClose:focus {
+        outline: none;
+        filter: invert(0.4) sepia(1) saturate(20) hue-rotate(0deg) brightness(1);
+    }
+    .change-sec:hover img,
+    .change-sec:focus img {
+        outline: none;
+        filter: invert(0.4) sepia(1) saturate(20) hue-rotate(0deg) brightness(1);
+    }
+    .change-sec:hover,
+    .change-sec:focus {
+        outline: none;
+    }
+    .secTn img:hover,
+    .secTn img:focus {
+        outline: none;
+        opacity: .75;
+        background-color: var(--white);
+    }
+    .headCart:hover img,
+    .headCart:focus img {
+        filter: invert(0.4) sepia(1) saturate(20) hue-rotate(0deg) brightness(1);
+    }
+    .headCart:focus {
+        outline: none;
     }
 }
 
